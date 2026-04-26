@@ -21,8 +21,8 @@ export default function ContactSection() {
 
           <div className="flex gap-12 font-pixel text-xs uppercase tracking-widest text-black/50 dark:text-white">
             <a href="#" className="border-b border-transparent hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white transition-colors pb-1">TWITTER</a>
-            <a href="#" className="border-b border-transparent hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white transition-colors pb-1">LINKEDIN</a>
-            <a href="#" className="border-b border-transparent hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white transition-colors pb-1">GITHUB</a>
+            <a href="https://www.linkedin.com/in/saffwann/" target="_blank" rel="noopener noreferrer" className="border-b border-transparent hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white transition-colors pb-1">LINKEDIN</a>
+            <a href="https://github.com/safwan246" target="_blank" rel="noopener noreferrer" className="border-b border-transparent hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white transition-colors pb-1">GITHUB</a>
           </div>
         </div>
 

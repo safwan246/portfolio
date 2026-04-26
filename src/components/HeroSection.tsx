@@ -19,67 +19,22 @@ export default function HeroSection() {
       <div className="absolute right-0 bottom-0 top-0 w-full md:w-1/2 bg-[url('/profile.jpg')] bg-cover bg-top md:bg-center mix-blend-multiply opacity-40 z-0 grayscale"
         style={{ maskImage: 'linear-gradient(to right, transparent, black)' }}></div>
 
+      {/* Developer Theme Visual Element */}
+      <HeroDeveloperAbstract />
+
       <div className="relative z-10 p-4 md:p-8 flex justify-between items-start pt-24 w-full">
         <div className="flex flex-col max-w-2xl mt-12 md:mt-0">
 
-          {/* Animated Heading */}
-          <h1 className="font-pixel text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[5.5rem] xl:text-[6.5rem] text-black dark:text-white leading-[1.1] md:leading-[0.9] tracking-tighter mb-4 md:mb-6 cursor-default">
-
-            {/* First Name Wave */}
-            <div className="flex pb-2">
-              {firstName.map((char, index) => (
-                <motion.span
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{
-                    opacity: 1,
-                    y: [0, -12, 0]
-                  }}
-                  transition={{
-                    opacity: { duration: 0.8, delay: index * 0.05 },
-                    y: {
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: index * 0.1
-                    }
-                  }}
-                  className="inline-block"
-                  style={{ display: char === " " ? "pre" : "inline-block" }}
-                >
-                  {char}
-                </motion.span>
-              ))}
-            </div>
-
-            {/* Last Name Wave */}
-            <div className="flex pb-2">
-              {lastName.map((char, index) => (
-                <motion.span
-                  key={index + 20}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{
-                    opacity: 1,
-                    y: [0, -12, 0]
-                  }}
-                  transition={{
-                    opacity: { duration: 0.8, delay: 0.4 + index * 0.05 },
-                    y: {
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 0.4 + index * 0.1
-                    }
-                  }}
-                  className="inline-block"
-                  style={{ display: char === " " ? "pre" : "inline-block" }}
-                >
-                  {char}
-                </motion.span>
-              ))}
-            </div>
-
-          </h1>
+          {/* Static Heading */}
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="font-pixel text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[5.5rem] xl:text-[6.5rem] text-black dark:text-white leading-[1.1] md:leading-[0.9] tracking-tighter mb-4 md:mb-6 cursor-default"
+          >
+            <div className="pb-2">MUHAMMED</div>
+            <div className="pb-2">SAFVAN</div>
+          </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
@@ -126,7 +81,7 @@ function ThemeToggle() {
   if (!mounted) return <div className="w-4 h-4"></div>;
 
   return (
-    <button 
+    <button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors flex items-center pr-4 md:pr-6 border-r border-black/10 dark:border-white/10"
       title="Toggle Dark Mode"
@@ -135,3 +90,26 @@ function ThemeToggle() {
     </button>
   );
 }
+
+const HeroDeveloperAbstract = () => {
+  return (
+    <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-[0.03] dark:opacity-[0.05] hidden md:flex flex-col justify-between py-12 md:py-24">
+      <motion.div 
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+        className="flex whitespace-nowrap font-pixel text-[50px] md:text-[100px] text-black dark:text-white tracking-widest uppercase leading-none"
+      >
+        <span className="shrink-0">SOFTWARE DEVELOPER // SOFTWARE DEVELOPER // </span>
+        <span className="shrink-0">SOFTWARE DEVELOPER // SOFTWARE DEVELOPER // </span>
+      </motion.div>
+      <motion.div 
+        animate={{ x: ["-50%", "0%"] }}
+        transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+        className="flex whitespace-nowrap font-pixel text-[50px] md:text-[100px] text-black dark:text-white tracking-widest uppercase leading-none"
+      >
+        <span className="shrink-0">MUHAMMED SAFVAN // MUHAMMED SAFVAN // </span>
+        <span className="shrink-0">MUHAMMED SAFVAN // MUHAMMED SAFVAN // </span>
+      </motion.div>
+    </div>
+  );
+};

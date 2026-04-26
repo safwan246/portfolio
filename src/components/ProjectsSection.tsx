@@ -6,13 +6,15 @@ const projects = [
     title: "Woodspire",
     type: "E-Commerce",
     description: "Woodspire is a full-stack furniture e-commerce web application built using the MERN stack (MongoDB, Express.js, React.js, Node.js). It features a responsive interface for browsing products and managing purchases, supported by a RESTful API and a MongoDB Atlas cloud database. JWT-based authentication is implemented to ensure secure user login and protected access.",
-    bg: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2670&auto=format&fit=crop"
+    bg: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2670&auto=format&fit=crop",
+    link: "http://51.21.221.33/"
   },
   {
     title: "Habit Tracker",
     type: "Productivity",
     description: "Habit Tracker is a web application built using Next.js and TypeScript that helps users manage and track their daily habits. It supports full CRUD operations, allowing users to create, update, and delete habits efficiently. JWT-based authentication is implemented to ensure secure user access and data protection.",
-    bg: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2670&auto=format&fit=crop"
+    bg: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2670&auto=format&fit=crop",
+    link: "https://habit-tracker-one-nu.vercel.app/"
   },
   {
     title: "Noillin",
@@ -84,12 +86,20 @@ export default function ProjectsSection() {
               </p>
 
               <div>
-                <a href="#" className="inline-flex items-center gap-3 group">
-                  <span className="font-pixel text-[10px] uppercase tracking-widest text-black dark:text-white border-b border-black/20 dark:border-white/20 pb-1 group-hover:border-black dark:hover:border-white transition-colors">
-                    Explore Project
-                  </span>
-                  <span className="text-black dark:text-white group-hover:translate-x-2 transition-transform">→</span>
-                </a>
+                {project.link ? (
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 group">
+                    <span className="font-pixel text-[10px] uppercase tracking-widest text-black dark:text-white border-b border-black/20 dark:border-white/20 pb-1 group-hover:border-black dark:hover:border-white transition-colors">
+                      Explore Project
+                    </span>
+                    <span className="text-black dark:text-white group-hover:translate-x-2 transition-transform">→</span>
+                  </a>
+                ) : (
+                  <a href="#" className="inline-flex items-center gap-3 group opacity-50 cursor-default" onClick={(e) => e.preventDefault()}>
+                    <span className="font-pixel text-[10px] uppercase tracking-widest text-black dark:text-white border-b border-black/20 dark:border-white/20 pb-1">
+                      Coming Soon
+                    </span>
+                  </a>
+                )}
               </div>
             </div>
           </motion.div>
