@@ -27,7 +27,7 @@ export const projects: Project[] = [
       "Automated Contract Generation"
     ],
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2670&auto=format&fit=crop",
-    websiteUrl: "https://noillin.com",
+    websiteUrl: "https://noillin-web.vercel.app/",
     technologies: ["Next.js", "TypeScript", "Node.js", "MongoDB", "Stripe API"],
     role: "Lead Full-Stack Developer",
     year: "2024"
@@ -46,7 +46,7 @@ export const projects: Project[] = [
       "JWT-based Secure Authentication"
     ],
     image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2670&auto=format&fit=crop",
-    websiteUrl: "http://51.21.221.33/",
+    websiteUrl: "https://woodspire.vercel.app/",
     technologies: ["React.js", "Express.js", "Node.js", "MongoDB Atlas", "Redux"],
     role: "Backend Architect & UI Lead",
     year: "2023"
